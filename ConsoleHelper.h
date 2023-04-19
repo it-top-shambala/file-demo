@@ -6,12 +6,12 @@
 
 #include "Person.h"
 
-void PrintPerson(string last_name, string first_name, int age) {
-    cout << last_name << " " << first_name << ", " << age << endl;
+void PrintPerson(string* person) {
+    cout << person[0] << " " << person[1] << ", " << person[2] << endl;
 }
 
-void PrintPersons(LastNames& last_names, FirstNames& first_names, Ages& ages) {
-    for (int i = 0; i < last_names.size(); ++i) {
-        PrintPerson(last_names[i], first_names[i], ages[i]);
+void PrintPersons(Persons& persons) {
+    for (int i = 0; i < persons.size(); ++i) {
+        PrintPerson(persons[i]);
     }
 }

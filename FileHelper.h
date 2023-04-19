@@ -10,17 +10,23 @@
 using namespace std;
 
 
-void ImportFromFile(string path, LastNames& last_names, FirstNames& first_names, Ages& ages) {
+Persons ImportFromFile(string path) {
     ifstream file;
     file.open(path);
 
+    Persons result;
     string line;
     while (getline(file, line)) {
         char delimiter = '|';
-        last_names.push_back(Parser(line, delimiter));
-        first_names.push_back(Parser(line, delimiter));
-        ages.push_back(stoi(line));
+        string* person = new string[SIZE];
+
+        person[0] = Parser(line, delimiter);
+        person[1] = Parser(line, delimiter);
+        person[2] = line;
+        result.push_back(person);
     }
 
     file.close();
+
+    return result;
 }

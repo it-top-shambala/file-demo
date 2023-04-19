@@ -5,6 +5,5 @@
 
 using namespace std;
 
-using LastNames = vector<string>;
-using FirstNames = vector<string>;
-using Ages = vector<int>;
+const int SIZE = 3;
+using Persons = vector<string*>;
